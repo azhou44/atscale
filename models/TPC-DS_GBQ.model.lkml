@@ -9,7 +9,7 @@
 # Project: TPC-DS GBQ
 
 connection: "atscale_az"
-label: "TPC-DS GBQ"
+label: "albert"
 
 
 include: "/views/TPC-DS_GBQ/TPC-DS_Benchmark_Model.view.lkml"
@@ -24,4 +24,3 @@ explore: TPC_DS_Benchmark_Model {
 explore: test {
   label: "test"
 }
-
