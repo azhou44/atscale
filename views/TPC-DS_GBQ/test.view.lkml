@@ -511,11 +511,11 @@ view: test {
         sql: ${TABLE}.`d_ib_upper_bound`;;
     }
 
-    dimension: d_i_color {
+    dimension: d_i_color2 {
         label: "Product Color"
         group_label: "Product Attributes"
         type: string
-        sql: ${TABLE}.`d_i_color`;;
+        sql: ${TABLE}.`d_i_color2`;;
     }
 
     dimension: d_i_size {
