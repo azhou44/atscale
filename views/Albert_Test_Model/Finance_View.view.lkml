@@ -1,6 +1,6 @@
-view: Internet_Sales_Cube {
-    label: "Internet Sales Cube"
-    sql_table_name: "Albert Test Model"."Internet Sales Cube";;
+view: Finance_View {
+    label: "Finance View"
+    sql_table_name: "Albert Test Model"."Finance View";;
     dimension: Sales_Type_2 {
         label: "Sales Type2"
         type: string
@@ -383,40 +383,6 @@ view: Internet_Sales_Cube {
         sql: ${TABLE}.`Weight`;;
     }
 
-    dimension: d_productsubcategoryId {
-        label: "Product Subcategory ID"
-        description: "ID of the product category"
-        group_label: "Product Attributes"
-        type: number
-        sql: ${TABLE}.`d_productsubcategoryId`;;
-    }
-
-    dimension: Product_Dimension_Product_Category {
-        label: "  Product Category"
-        description: "Product Sub Category"
-        group_label: "Product Attributes.Product Hierarchy"
-        type: string
-        sql: ${TABLE}.`Product Category`;;
-        drill_fields: [Product_Dimension_Product_Name]
-    }
-
-    dimension: Product_Dimension_Product_Line {
-        label: "   Product Line"
-        description: "Product Line"
-        group_label: "Product Attributes.Product Hierarchy"
-        type: string
-        sql: ${TABLE}.`Product Line`;;
-        drill_fields: [Product_Dimension_Product_Category]
-    }
-
-    dimension: Product_Dimension_Product_Name {
-        label: " Product Name"
-        description: "Full Product Name"
-        group_label: "Product Attributes.Product Hierarchy"
-        type: string
-        sql: ${TABLE}.`Product Name`;;
-    }
-
 
     measure: customercount1 {
         label: "Customer Count"
@@ -440,21 +406,6 @@ view: Internet_Sales_Cube {
         value_format: "$#,##0.00"
         type: average
         sql: ${TABLE}.`lastproductunitprice`;;
-    }
-
-    measure: List_Price {
-        label: "List Price"
-        group_label: "Product Metrics"
-        type: sum
-        sql: ${TABLE}.`List Price`;;
-    }
-
-    measure: calculatedtax1 {
-        label: "Calculated Tax"
-        group_label: "Sales Metrics"
-        value_format: "$#,##0.00"
-        type: sum
-        sql: ${TABLE}.`calculatedtax1`;;
     }
 
     measure: maxtaxamount1 {
@@ -618,7 +569,7 @@ view: Internet_Sales_Cube {
     }
 
     set: Shipping_Details {
-        fields: [Customer_Hierarchy_Customer_Name,Product_Dimension_Product_Name,Color,Size,Style,orderquantity1,salesamount1]
+        fields: [Customer_Hierarchy_Customer_Name,Color,Size,Style,orderquantity1,salesamount1]
     }
 
 }
